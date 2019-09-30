@@ -102,7 +102,7 @@ curl -X GET http://localhost:9200/
   "tagline" : "You Know, for Search"
 }
 ```
-For Kibana dashboard, browse at http://<host>:5601/app/kibana
+For Kibana dashboard, browse at http://IP:5601/app/kibana
 
 ## Beats
 
