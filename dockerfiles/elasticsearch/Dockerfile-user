@@ -1,0 +1,10 @@
+FROM elasticsearch:7.3.0
+
+RUN chown -R elasticsearch /usr/share/elasticsearch \
+ && mkdir -p /usr/share/elasticsearch/data/nodes \
+ && chown -R elasticsearch:elasticsearch /usr/share/elasticsearch/data
+
+USER elasticsearch
+
+# Add your elasticsearch plugins setup here
+# Example: RUN elasticsearch-plugin install analysis-icu
