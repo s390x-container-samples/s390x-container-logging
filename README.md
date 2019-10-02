@@ -66,6 +66,7 @@ sysctl -w vm.max_map_count=262144
 ## Docker-compose
 Run the containers with `docker-compose`
 ```sh
+$ docker-compose create
 $ docker-compose start
 Starting elasticsearch ... done
 Starting logstash      ... done
