@@ -8,6 +8,9 @@ filebeat.inputs:
     enabled: true
     paths:
      - /var/log/*.log
+  - type: docker
+    enabled: true
+    containers.ids: '*'
 
 output.logstash:
  enabled: true

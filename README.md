@@ -105,7 +105,49 @@ curl -X GET http://localhost:9200/
 For Kibana dashboard, browse at http://IP:5601/app/kibana
 
 ## Beats
-
-Beats is the tool that gathers data. In this example, we are using `filebeat` with the `syslog` module. There are many more usecases. You can check what beat offers at https://www.elastic.co/products/beats.
+Beats is the tool that gathers data. Currently, the repo contains the configuration to collect syslog and container information. There are many more usecases. You can check what beat offers at https://www.elastic.co/products/beats.
+### Syslog
+The `syslog` module can be configured by adding to `filebeat.yaml`
+```yaml
+filebeat.inputs:
+  - type: log
+    enabled: true
+    paths:
+     - /var/log/*.log
+```
+and the beats container needs to be able to read the directory where the logs are stored. Hence, we need to pass this directory as volume. This is done by adding in the docker-compose.yaml these lines:
+```yaml
+      - type: bind
+        source: /var/log/
+        target: /var/log/
+```
+More advanced options at https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-input-syslog.html
 
 For this example, you can use one of the scripts in `demo` to generate some logs. They will be visible in Kibana. 
+
+### Docker
+
+In order to collect docker metrics, you need to enable the `docker` module in beats. It is enough to add
+these options to the `filebeat.yaml`
+```yaml
+filebeat.inputs:
+  - type: docker
+    enabled: true
+    containers.ids: '*'
+```
+The beat conainer needs to be able to read the container logs. Therefore, the `/var/lib/docker/containers` needs to be passed as a volume. In the `docker-compose.yaml`, this is done by adding:
+```sh
+      - type: bind
+        source: /var/lib/docker/containers
+        target: /var/lib/docker/containers
+```
+More advanced options at https://www.elastic.co/guide/en/beats/filebeat/current/filebeat-input-docker.html
+
+You can generate some logs by running
+```sh
+$ docker run -ti alpine sh -c 'while [ true ]; do echo "Printi something" && sleep 5 ; done'
+Printing something
+Printing something
+Printing something
+^C
+```
