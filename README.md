@@ -104,7 +104,7 @@ curl -X GET http://localhost:9200/
 ```
 For Kibana dashboard, browse at http://IP:5601/app/kibana
 
-## Beats
+## FileBeat
 Beats is the tool that gathers data. Currently, the repo contains the configuration to collect syslog and container information. There are many more usecases. You can check what beat offers at https://www.elastic.co/products/beats.
 ### Syslog
 The `syslog` module can be configured by adding to `filebeat.yaml`
