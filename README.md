@@ -19,8 +19,8 @@ Elastisearch:
 The `dockerfiles/elasticsearch/Dockerfile-user` dockerfile fixes the permission denied problem for the dir data.
 ```sh
 $ wget -O dockerfiles/elasticsearch/Dockerfile https://raw.githubusercontent.com/linux-on-ibm-z/dockerfile-examples/master/Elasticsearch/Dockerfile
-$ docker build --no-cache -t elastisearch:7.3.0 -f dockerfiles/elasticsearch/Dockerfile .
-$ docker build -t elastisearch-user:7.3.0 -f dockerfiles/elasticsearch/Dockerfile-user .
+$ docker build --no-cache -t elasticsearch:7.3.0 -f dockerfiles/elasticsearch/Dockerfile .
+$ docker build -t elasticsearch-user:7.3.0 -f dockerfiles/elasticsearch/Dockerfile-user .
 ```
 
 Logstash:
@@ -49,7 +49,7 @@ Check images:
 ```sh
 $ docker images
 REPOSITORY                TAG                                        IMAGE ID            CREATED             SIZE
-elastisearch              7.3.0                                      8fa079cb4f10        41 minutes ago      1.02GB
+elasticsearch              7.3.0                                      8fa079cb4f10        41 minutes ago      1.02GB
 logstash                  7.3.0                                      679cbd6747e1        4 hours ago         633MB
 kibana                    7.3.0                                      171eb463de5c        8 hours ago         7.45GB
 beats                     7.3.0                                      08d107976951        3 days ago          1.43GB
