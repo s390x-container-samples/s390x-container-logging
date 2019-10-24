@@ -146,9 +146,9 @@ More advanced options at https://www.elastic.co/guide/en/beats/filebeat/current/
 
 You can generate some logs by running
 ```sh
-$ docker run -ti alpine sh -c 'while [ true ]; do echo "Printi something" && sleep 5 ; done'
-Printing something
-Printing something
-Printing something
+$ docker run -ti alpine sh -c 'while [ true ]; do echo "Print something" && sleep 5 ; done'
+Print something
+Print something
+Print something
 ^C
 ```
