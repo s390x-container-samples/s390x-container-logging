@@ -35,7 +35,7 @@ $ docker build --no-cache -t logstash:7.3.0 -f dockerfiles/logstash/Dockerfile .
 Kibana:
 ```sh
 $ mkdir -p dockerfiles/kibana/
-$ wget -O dockerfiles/kibana/Dockerfile ttps://raw.githubusercontent.com/linux-on-ibm-z/dockerfile-examples/master/Kibana/Dockerfile
+$ wget -O dockerfiles/kibana/Dockerfile https://raw.githubusercontent.com/linux-on-ibm-z/dockerfile-examples/master/Kibana/Dockerfile
 $ docker build -t kibana:7.3.0 -f dockerfiles/kibana/Dockerfile .
 ```
 Beats:
