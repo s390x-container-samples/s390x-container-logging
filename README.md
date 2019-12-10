@@ -49,9 +49,10 @@ Check images:
 ```sh
 $ docker images
 REPOSITORY                TAG                                        IMAGE ID            CREATED             SIZE
-elasticsearch              7.3.0                                      8fa079cb4f10        41 minutes ago      1.02GB
+elasticsearch             7.3.0                                      8fa079cb4f10        41 minutes ago      1.02GB
+elasticsearch-user        7.3.0                                      1ccfd62bc03e        10 minutes ago      1.18GB
 logstash                  7.3.0                                      679cbd6747e1        4 hours ago         633MB
-kibana                    7.3.0                                      171eb463de5c        8 hours ago         7.45GB
+kibana                    7.3.0                                      b5f05d642069        18 hours ago        527MB
 beats                     7.3.0                                      08d107976951        3 days ago          1.43GB
 ```
 
