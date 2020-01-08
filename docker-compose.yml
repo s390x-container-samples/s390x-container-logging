@@ -61,11 +61,8 @@ services:
     hostname: kibana
 
   beats:
-    image: beats:7.3.0
+    image: beats-user:7.3.0
     volumes:
-      - type: bind
-        source: ./beats/config/filebeat.yaml
-        target: /Beats/filebeat.yml
       - type: bind
         source: /var/log/
         target: /var/log/

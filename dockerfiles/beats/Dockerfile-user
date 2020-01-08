@@ -1,0 +1,5 @@
+FROM beats:7.3.0
+
+COPY ./beats/config/filebeat.yaml /Beats/filebeat.yml
+
+RUN chmod go-w /Beats/filebeat.yml && chown root:root /Beats/filebeat.yml
